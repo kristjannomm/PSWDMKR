@@ -18,7 +18,7 @@ Windows 10 (32 bit):
 
 Debian (Ubuntu, Linux mint etc.) comes with Python pre-installed, if not:
 1. Open terminal
-2. Enter "sudo apt update && sudo apt install python3.8"
+2. Enter "sudo apt update && sudo apt install python3"
 3. Enter password
 
 Arch Linux:
