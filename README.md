@@ -1,9 +1,9 @@
 # PSWDMKR
 
 Makes you a random password.
-Supported languages: English, Estonian (Eesti), Russian (русский)
-Works on Windows, Linux, MacOS
-You need to download Python to use this program 
+Supported languages: English, Estonian (Eesti), Russian (русский).
+Works on Windows, Linux, MacOS.
+You need to download Python to use this program .
 
 How to install PswdMKR
 1. On https://github.com/kristjannomm/PSWDMKR, click "Code" -> "Download .zip".
