@@ -11,6 +11,8 @@ You need to download Python to use this program .
 
 How to install PswdMKR
 1. On https://github.com/kristjannomm/PSWDMKR, click "Code" -> "Download .zip".
+OR
+2. Use git: git clone https://github.com/kristjannomm/PSWDMKR
 
 How to install Python:
 
