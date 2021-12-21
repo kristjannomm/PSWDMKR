@@ -1,4 +1,8 @@
 # PSWDMKR
+Not a serious project!!!
+Use instead 
+https://github.com/Ramesh-Bhutka/-Python-Random-Password-Generator-
+https://github.com/sectool/Python-Random-Password-Generator
 
 Makes you a random password.
 Supported languages: English, Estonian (Eesti), Russian (русский).
