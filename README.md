@@ -39,6 +39,5 @@ MacOS:
 1. Download from https://www.python.org/downloads/release/python-395/
 
 TODO:
-1. Add a way to save a password.
-2. Improve code overall
-3. Add a GUI
+1. Improve code overall
+2. Add a GUI
