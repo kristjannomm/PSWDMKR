@@ -1,30 +1,34 @@
-#PswdMKR 2.0
+#PswdMKR
 #MIT License
 #Copyright (c) 2021 kristjannomm
 import sys
 import random
-from termcolor import colored, cprint
+import os
+import pathlib
 
-intro = colored('PswdMKR 2.0', 'cyan', attrs=['reverse',"bold" , 'blink'])
-print(intro)
-github = colored('github.com/kristjannomm/PSWDMKR', 'white', attrs=['reverse', 'blink'])
-print(github)
+print("PswdMKR 2.1")
+print("github.com/kristjannomm/PSWDMKR")
+
 print ("-------------------------------")
 
+large_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+letters = "abcdefghijklmnopqrstuvwxyz"
+numbers = "1234567890"
+special = "!&=?-$€£(/)"
 #Chars (short for character) defines 
-#the letters and symbols that are in the password 
-chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!&=?-$€£(/)"
+#the letters, numbers and symbols that are in the password
+chars = large_letters + letters + numbers + special
 
 #Pick the language for the program
 #Currently languages available:
 #English
-cprint('ENG:Choose your language [1]', 'red' ,'on_white')
+print('ENG:Choose your language [1]')
 
 #Estonian (Eesti keel)
-cprint("EST:Valige oma keel [2]", "blue" ,"on_white")
+print("EST:Valige oma keel [2]")
 
 #Russian (Русский язык)
-cprint("RUS:Выберите свой язык [3]", "white", "on_red")
+print("RUS:Выберите свой язык [3]")
 
 #Asking for input
 question = input("-> ")
@@ -39,8 +43,13 @@ if question == ("1"):
                 for x in range(0,password_len):
                     password_char = random.choice(chars)
                     password      = password + password_char
-                print ("Here is your password -> ", password)
-                cprint("Press [CTRL+C] to exit", "blue")
+                print('\x1b[6;30;42m' + "Here is your password -> ", password + '\x1b[0m')      
+            #saves the password
+            with open('password.txt', 'w') as f:
+                f.write(password)
+            print ("Your passowrd has been saved at ->",(pathlib.Path().resolve())) 
+            #end
+            print ("Press [CTRL+C] to exit")
     else:
             sys.exit()
 
@@ -49,7 +58,7 @@ else:
     print("ENG(1), EST(2), RUS(3)")
 #Estonian
 if question == ("2"):
-        while 1:
+    while 1:
             password_len = int(input("Kui pikk parool peab olema -> "))
             password_count = int(input("Mitu parooli on vaja -> "))
             for x in range(0,password_count):
@@ -57,9 +66,14 @@ if question == ("2"):
                 for x in range(0,password_len):
                     password_char = random.choice(chars)
                     password      = password + password_char
-                print ("Siin on sinu parool -> ", password)
-                cprint ("Vajutage [CTRL+C], et lahkuda", "blue")
-        else:
+                print('\x1b[6;30;42m' + "Siin on sinu parool -> ", password + '\x1b[0m') 
+                #saves the password
+                with open('password.txt', 'w') as f:
+                    f.write(password)
+                print ("Su parool on salvestatud asukohta ->",(pathlib.Path().resolve())) 
+                #end
+                print ("Vajuta [CTRL+C], et lahkuda")
+    else:
             sys.exit()
 
 #Russian
@@ -72,11 +86,12 @@ if question == ("3"):
                 for x in range(0,password_len):
                     password_char = random.choice(chars)
                     password      = password + password_char
-                print ("Ваш пароль -> ", password)
-                cprint ("Нажмите [CTRL + C], чтобы выйти", "blue")
+                print('\x1b[6;30;42m' + "Ваш пароль -> ", password + '\x1b[0m') 
+                #saves the password
+                with open('password.txt', 'w') as f:
+                    f.write(password)
+                print ("Your passowrd has been saved at ->",(pathlib.Path().resolve())) 
+                #end
+                print ("Нажмите [CTRL + C], чтобы выйти")
         else:
             sys.exit()
-
-#todo
-#with password("save.txt", "w") as f:
-#    f.write(password + ",")
